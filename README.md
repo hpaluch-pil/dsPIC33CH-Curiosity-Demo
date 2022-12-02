@@ -27,9 +27,11 @@ Here is brief overview of I/O peripherals - excluding DC/DC converter parts:
 
 
 Software Requirements:
-- MPLAB X IDE `v5.05`
+- MPLAB X IDE `v5.50`
+  > WARNING! Version v6.05 freezes right when Slave project is added to Master!
+  > From that point even killing it and running again will not help - it will freeze again!
 - DFP: `dsPIC33CH-MP_DFP `v1.7.194`
-- XC16 `v.200`
+- XC16 `v.20`
 
 # Step by Step tutorial
 
@@ -68,10 +70,8 @@ Now we have to run MCC (Microchip Configuratin tool)
   - go to `Tools` -> `Plugins`
   - seect `Installed` tab and look for `MPLAB Code Configurator`
   - if it is not there - select tab `Available Plugins` and select it
-  - in my case I have plugin `MCC v5.2.2`
+  - in my case I have plugin `MCC v5.0.3` - latest version for MPLAB v5.50
 - now click on `MCC` icon on Toolbar to open MCC Tool
-- in my case (MPLAB X IDE v6.05 and MCC v5.2.2) you may get redirected to issue:
-  - https://onlinedocs.microchip.com/pr/GUID-BD1BECBF-14DB-4FBB-82D3-A4219CF22F9F-en-US-1/index.html?GUID-67D73C1F-567E-4BDF-B437-3F3CB8251844
 - now we will follow guide and so:
 - `MCC Content Manager` window should appear
 - click on `Select MCC Classic`
@@ -95,11 +95,11 @@ Now we have to assign these LEDs from above table to proper Master and/or Slave 
 
 So do this:
 - select `Pin Manager: Grid View` (it is in right-bottom Window)
-- now double click on this cell:
+- now Single click on this cell:
   - Row: `Pin Module` -> `GPIO output` 
   - Column: `Port E` -`0`
 - the right cell should have now green Lock Icon
-- now double click on this cell for Slave LED (`RE1`):
+- now Single click on this cell for Slave LED (`RE1`):
   - Row: `Slave Core` -> `Ownership` -> `output`
   - Column: `Port E` -> `1`
 - now select `Pin Module` tab (top middle Window)
@@ -113,6 +113,8 @@ Now we have to save Master settings from Slave core (yes :-)
 Now we can click on Project Resources -> Generate to generate C source files
 under `Master.X/mcc_generated_files/`
 - ignore warnings so far
+
+Now rather close MCC tool by clicking on `MCC` icon in toolbar
 
 Do NOT build yet - we need to create Slave project for build to succeed.
 
@@ -135,12 +137,12 @@ Back in MPLAB X IDE we have to create Slave project:
   - project Name: `Slave` - the name must match those configured in MCC Tool (!)
   - project Location: `E:\projects\dsPIC33CH-Curiosity-Demo`
   - resulting project folder `E:\projects\dsPIC33CH-Curiosity-Demo\Slave.X`
-  - UNCHECK `Set as main project` (slave will be build as part of Master build)
+  - temporarily keep CHECKED `Set as main project`
 - click on `Finish`
 
 Now we need a bit tricky way run `MCC` on `Slave.X` project:
-- temporarily right-click `Slave` and select `Set as Main project`
-- Close and Open MCC Tools 
+- ensure that `Slave` is temporarily Main project (Bold font in Projects tab) 
+- click on `MCC` icon in toolbar to run MCC tool on `Slave` project
 - again select `MCC Classic` and `Finish`
 
 Loading Master settings to Slave project:
@@ -154,7 +156,7 @@ Loading Master settings to Slave project:
 Now we have to properly configure and name `RE1` (in Master config we just reserved
 id as "Slave output" but detailed configruation must be done for Slave core:
 - in Pin Manager: `Grid View`
-- now double click on this cell:
+- now SINGLE click on this cell:
   - Row: `Pin Module` -> `GPIO output` 
   - Column: `Port E` -`1`
 - there must show green lock icon in this cell.
@@ -177,10 +179,38 @@ Core code. So we have to include `Slave.X` project into `Master.X` project build
 - select `E:\projects\dsPIC33CH-Curiosity-Demo\Slave.X`
 - ensure that Store path as: is `Relative` (to make this project portable)
 - and click on `Add`
+- AGAIN WARNING! If you have MPLAB X IDE v6.05 it will likely freeze...
+  - so use rather MPLAB X IDE v5.50 - it works fine.
 
-Wow! In my case MPLAB X IDE v6.05 froz...
+Now we need to tell MPLAB to build Slave project:
+- right-click `Master` -> `Secondaries` -> `Properties...`
+  - WARNING do NOT right-click on `Slave` leaf - there is no `Properties...` dialog.
+    You have to click on parent `Secondaries`
+- select checkbox `Build` and click `OK` to close dialog.
+
+Finally we have to copy and paste example sources
+to `Master.X/main.c` and `Slave.X/main.c` as shown
+on https://microchipdeveloper.com/16bit:ch-example
+
+Please see:
+- [Master.X/main.c](Master.X/main.c)
+- [Slave.X/main.c](Slave.X/main.c)
+for full source.
 
 
+# Building
 
+In Tab `Projects` right-click on `Master` and select `Set as Main Project` (it must be that
+way before build).
 
+Now you can right-click on `Master` and select `Clean and Build` - or use Hammer icons on Toolbar.
+- Please note that this will ALSO build `Slave` project, because it has to be included in Master Core Program
+  Flash.
+
+# Programming and running
+
+If you have already assigned embedded PicKit programmer you can just use
+- `Run Main Project` (big green arrow icon on toolbar)
+
+- Plase be patient - it may take some time for program to run...
 

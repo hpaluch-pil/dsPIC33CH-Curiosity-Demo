@@ -1,4 +1,4 @@
-<config configName="default" projectName="Master" configVersion="1.1" device="dsPIC33CH512MP508" deviceLibraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" coreVersion="5.4.14">
+<config configName="default" projectName="Master" configVersion="1.1" device="dsPIC33CH512MP508" deviceLibraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" coreVersion="5.3.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -19350,7 +19350,7 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>2cd23b70fdfc1f0f611f706f75016495224cd07af8b33cd2d500850637e94c1c</hash>
+         <hash>0bc5b4a4ab607dbf61cfce49682fb76a7e6771a14576d07f103bb2fe83f0d37c</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\interrupt_manager.h</file>
@@ -19385,12 +19385,12 @@
          <hash>fd3b8900a80c3a4cdb8b2a50a783ffb42a134ce9e2bc835cbce289bf1f891de8</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\system.h</file>
-         <hash>9ebeffb7e8005c1c05f5e4dabd2a10525459f8f939be4c84af769fc19c45e3f9</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\pin_manager.c</file>
          <hash>c1975cae6578b3e4cc9b22e6839c4ff03ca175d0f34367ebc01ba84bff7ce945</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system.h</file>
+         <hash>9ebeffb7e8005c1c05f5e4dabd2a10525459f8f939be4c84af769fc19c45e3f9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\slave_typedef.h</file>

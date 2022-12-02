@@ -53,10 +53,10 @@
 #include "system_types.h"
 #include "reset.h"
 
-#include "reset.h"
 #include "slave_typedef.h"
 #include "slave1.h"
 #include "watchdog.h"
+#include "reset.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 

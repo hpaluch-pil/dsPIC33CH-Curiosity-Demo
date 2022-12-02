@@ -1,4 +1,4 @@
-<config configName="default" projectName="Slave" configVersion="1.1" device="dsPIC33CH512MP508S1" deviceLibraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" coreVersion="5.4.14">
+<config configName="default" projectName="Slave" configVersion="1.1" device="dsPIC33CH512MP508S1" deviceLibraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" coreVersion="5.3.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -14633,16 +14633,16 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files\master.h</file>
-         <hash>08c69842f978c995b52d072183c1a557f8fba2520dd025a672e2f10e8d623c9b</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\interrupt_manager.h</file>
          <hash>ec59c3e48dcba5534bd6507f3863e9b792600d3c3ac4e8ea010d5e7bb9049da9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>03f730db2d7218d94d5b7eec191103c12cc99ac174394057cb30a749c450713f</hash>
+         <hash>eb9ac33a065d1737a7fea2be4717914e35de58abfc3db31e931f8450c4251f91</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\master.h</file>
+         <hash>08c69842f978c995b52d072183c1a557f8fba2520dd025a672e2f10e8d623c9b</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\reset.c</file>
@@ -14674,7 +14674,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>72ff100fc4076464bfd2223aba8f41cc5f327de1c1da5b13dc0618fba1131cb7</hash>
+         <hash>cb9467b1b4846d116219e2436fcdab3db08555ee75b1fae00b125cc0c492acaf</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\traps.c</file>

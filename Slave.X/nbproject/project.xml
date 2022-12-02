@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Master</name>
-            <creation-uuid>3fd31e27-1179-4eab-9da5-7fb9d7880fc9</creation-uuid>
+            <name>Slave</name>
+            <creation-uuid>90e973a9-dd01-4169-99bf-5f0ab3c32581</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>

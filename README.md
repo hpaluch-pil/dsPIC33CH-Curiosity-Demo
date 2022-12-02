@@ -212,5 +212,7 @@ Now you can right-click on `Master` and select `Clean and Build` - or use Hammer
 If you have already assigned embedded PicKit programmer you can just use
 - `Run Main Project` (big green arrow icon on toolbar)
 
+After a while both LED1 and LED2 should be ON (forever).
+
 - Plase be patient - it may take some time for program to run...
 

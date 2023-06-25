@@ -6,9 +6,9 @@ dual-core dsPIC33CH from Microchip tutorial:
 
 IMPORTANT NOTES:
 
-- MPLAB X IDE v6.05 is *broken*  - it will hang-up forewer once Slave Core project
+- MPLAB X IDE v6.05 is *broken*  - it will hang-up forever once Slave Core project
   is added to Master Core project (!)
-- MPLAB X IDE v6.10 is even *worse* - it will not FOUND PKOB (PicKit on board)
+- MPLAB X IDE v6.10 is even *worse* - it will not find PKOB (PicKit on board)
   programmer/debugger (really!!!). It is in release notes and also there:
   
   > https://forum.microchip.com/s/topic/a5C3l0000003kZNEAY/t390468
@@ -18,9 +18,6 @@ IMPORTANT NOTES:
   > See MPLABX-7691 and Hardware Tool Issues.
 
 - so latest working MPLAB X IDE is v6.00 or v5.50.
-
-
-
 
 Hardware Requirements:
 - [dsPIC33CH Curiosity Development Board](https://www.microchip.com/en-us/development-tool/DM330028-2)

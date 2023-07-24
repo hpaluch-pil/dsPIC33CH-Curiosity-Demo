@@ -1,6 +1,7 @@
 *.swp
 *.tmp
 *.bak
+*.bak*
 ~*
 
 dist/

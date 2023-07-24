@@ -13,11 +13,11 @@
   @Description
     This source file provides main entry point for system initialization and application code development.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.2
         Device            :  dsPIC33CH512MP508
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.70
-        MPLAB 	          :  MPLAB X v5.50
+        Compiler          :  XC16 v2.10
+        MPLAB 	          :  MPLAB X v6.05
 */
 
 /*
@@ -45,7 +45,9 @@
 /**
   Section: Included Files
 */
-#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/system.h"
+#include "mcc_generated_files/pin_manager.h"
+#include "mcc_generated_files/slave1.h"
 
 #define DATA_UNDER_TEST 0xAAAA
 

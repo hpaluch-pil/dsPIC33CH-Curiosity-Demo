@@ -8,16 +8,13 @@ IMPORTANT NOTES:
 
 - MPLAB X IDE v6.05 is *broken*  - it will hang-up forever once Slave Core project
   is added to Master Core project (!)
-- MPLAB X IDE v6.10 is even *worse* - it will not find PKOB (PicKit on board)
-  programmer/debugger (really!!!). It is in release notes and also there:
-  
-  > https://forum.microchip.com/s/topic/a5C3l0000003kZNEAY/t390468
-  >
-  > For MPLAB X IDE v6.10, MPLAB PICkit 3, MPLAB ICD 3 and several
-  > older on-board debuggers fail to connect to the IDE.
-  > See MPLABX-7691 and Hardware Tool Issues.
+- MPLAB X IDE v6.10 has another bug: It does not work with PicKit 3 and
+  PKOB (PicKit on-board) programmer - so you will be unable to program
+  dsPIC on Curiosity board.
 
-- so latest working MPLAB X IDE is v6.00 or v5.50.
+  To fix it you have to install *Plugin Updates*
+
+- so latest working MPLAB X IDE is v6.10 WITH UPDATES or v5.50.
 
 Hardware Requirements:
 - [dsPIC33CH Curiosity Development Board](https://www.microchip.com/en-us/development-tool/DM330028-2)
@@ -42,9 +39,21 @@ Here is brief overview of I/O peripherals - excluding DC/DC converter parts:
 
 
 Software Requirements:
-- MPLAB X IDE `v6.00`
+- MPLAB X IDE `v6.10`
 - DFP: `dsPIC33CH-MP_DFP `v1.12.352`
+- MCC Core: v5.5.7 (Updated)
+- PLIB: 1.171.2 (Updated)
 - XC16 `v2.10`
+
+Again important notes:
+- it is necessary to install Plugin Updates in MPLAB X IDE v6.10,
+  otherwise it will NOT work with PicKit on-board programmer (PKOB). To be
+  able to program dsPIC on Curiosity board you need these updates.
+- also if MPLAB X IDE v6.10 does not see your on-board programmer try to:
+  - exit MPLAB X IDE
+  - (re) connect Curiosity board
+  - start MPLAB X IDE again
+  - now programmer should be visible
 
 # Step by Step tutorial
 

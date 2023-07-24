@@ -13,11 +13,11 @@
   @Description
     This source file provides APIs for SLAVE1.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.2
         Device            :  dsPIC33CH512MP508
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.70
-        MPLAB 	          :  MPLAB X v5.50
+        Compiler          :  XC16 v2.10
+        MPLAB 	          :  MPLAB X v6.05
 */
 
 /*
@@ -44,22 +44,22 @@
 
 
 // FMBXM
-#pragma config MBXM0 = M2S    //Mailbox 0 data direction->Mailbox register configured for Master data write (Master to Slave data transfer)
-#pragma config MBXM1 = S2M    //Mailbox 1 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM2 = S2M    //Mailbox 2 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM3 = S2M    //Mailbox 3 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM4 = S2M    //Mailbox 4 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM5 = S2M    //Mailbox 5 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM6 = S2M    //Mailbox 6 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM7 = S2M    //Mailbox 7 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM8 = S2M    //Mailbox 8 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM9 = S2M    //Mailbox 9 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM10 = S2M    //Mailbox 10 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM11 = S2M    //Mailbox 11 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM12 = S2M    //Mailbox 12 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM13 = S2M    //Mailbox 13 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM14 = S2M    //Mailbox 14 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
-#pragma config MBXM15 = S2M    //Mailbox 15 data direction->Mailbox register configured for Master data read (Slave to Master data transfer)
+#pragma config MBXM0 = M2S    //Mailbox 0 data direction->Mailbox register configured for Main data write (Main to Secondary data transfer)
+#pragma config MBXM1 = S2M    //Mailbox 1 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM2 = S2M    //Mailbox 2 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM3 = S2M    //Mailbox 3 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM4 = S2M    //Mailbox 4 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM5 = S2M    //Mailbox 5 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM6 = S2M    //Mailbox 6 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM7 = S2M    //Mailbox 7 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM8 = S2M    //Mailbox 8 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM9 = S2M    //Mailbox 9 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM10 = S2M    //Mailbox 10 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM11 = S2M    //Mailbox 11 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM12 = S2M    //Mailbox 12 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM13 = S2M    //Mailbox 13 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM14 = S2M    //Mailbox 14 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
+#pragma config MBXM15 = S2M    //Mailbox 15 data direction->Mailbox register configured for Main data read (Secondary to Main data transfer)
 
 // FMBXHS1
 #pragma config MBXHSA = MBX0    //Mailbox handshake protocol block A register assignment->MSIxMBXD0 assigned to mailbox handshake protocol block A
@@ -85,28 +85,28 @@
 
 // FS1DEVOPT
 #pragma config S1ALTI2C1 = OFF    //Alternate I2C1 Pin bit->I2C1 mapped to SDA1/SCL1 pins
-#pragma config S1SPI1PIN = PPS    //S1 SPI1 Pin Select bit->Slave SPI1 uses I/O remap (PPS) pins
-#pragma config S1SSRE = ON    //Slave Slave Reset Enable->Slave generated resets will reset the Slave Enable Bit in the MSI module
-#pragma config S1MSRE = ON    //Master Slave Reset Enable->The master software oriented RESET events (RESET Op-Code, Watchdog timeout, TRAP reset, illegalInstruction) will also cause the slave subsystem to reset.
+#pragma config S1SPI1PIN = PPS    //S1 SPI1 Pin Select bit->Secondary SPI1 uses I/O remap (PPS) pins
+#pragma config S1SSRE = ON    //Secondary Secondary Reset Enable->Secondary generated resets will reset the Secondary Enable Bit in the MSI module
+#pragma config S1MSRE = ON    //Main Secondary Reset Enable->The Main software oriented RESET events (RESET Op-Code, Watchdog timeout, TRAP reset, illegalInstruction) will also cause the Secondary subsystem to reset.
 
 // FS1DMTIVTL
-#pragma config S1DMTIVTL = 0    //Slave Dead Man Timer Interval low word->0
+#pragma config S1DMTIVTL = 0    //Secondary Dead Man Timer Interval low word->0
 
 // FS1DMTIVTH
-#pragma config S1DMTIVTH = 0    //Slave Dead Man Timer Interval high word->0
+#pragma config S1DMTIVTH = 0    //Secondary Dead Man Timer Interval high word->0
 
 // FS1DMTCNTL
-#pragma config S1DMTCNTL = 0    //Slave DMT instruction count time-out value low word->0
+#pragma config S1DMTCNTL = 0    //Secondary DMT instruction count time-out value low word->0
 
 // FS1DMTCNTH
-#pragma config S1DMTCNTH = 0    //Slave DMT instruction count time-out value high word->0
+#pragma config S1DMTCNTH = 0    //Secondary DMT instruction count time-out value high word->0
 
 // FS1DMT
-#pragma config S1DMTDIS = OFF    //Slave Dead Man Timer Disable bit->Slave Dead Man Timer is Disabled and can be enabled by software
+#pragma config S1DMTDIS = OFF    //Secondary Dead Man Timer Disable bit->Secondary Dead Man Timer is Disabled and can be enabled by software
 
 // FS1ICD
 #pragma config S1ICS = PGD1    //ICD Communication Channel Select bits->Communicate on PGC1 and PGD1
-#pragma config S1ISOLAT = ON    //Isolate the Slave core subsystem from the master subsystem during Debug->The slave can operate (in debug mode) even if the SLVEN bit in the MSI is zero.
+#pragma config S1ISOLAT = ON    //Isolate the Secondary core subsystem from the Main subsystem during Debug->The Secondary can operate (in debug mode) even if the SLVEN bit in the MSI is zero.
 #pragma config S1NOBTSWP = OFF    //BOOTSWP Instruction Enable/Disable bit->BOOTSWP instruction is disabled
 
 // FS1OSCSEL
@@ -114,12 +114,12 @@
 #pragma config S1IESO = ON    //Two-speed Oscillator Start-up Enable bit->Start up device with FRC, then switch to user-selected oscillator source
 
 // FS1OSC
-#pragma config S1OSCIOFNC = OFF    //Slave OSC2 Pin Function bit->OSC2 is clock output
+#pragma config S1OSCIOFNC = OFF    //Secondary OSC2 Pin Function bit->OSC2 is clock output
 #pragma config S1FCKSM = CSDCMD    //Clock Switching Mode bits->Both Clock switching and Fail-safe Clock Monitor are disabled
 #pragma config S1PLLKEN = S1PLLKEN_ON    //S1PLLKEN->S1PLLKEN_ON
 
 // FS1POR
-#pragma config S1BISTDIS = DISABLED    //Slave BIST on reset disable bit->Slave BIST on reset feature disabled
+#pragma config S1BISTDIS = DISABLED    //Secondary BIST on reset disable bit->Secondary BIST on reset feature disabled
 
 // FS1ALTREG
 #pragma config S1CTXT1 = OFF    //Specifies Interrupt Priority Level (IPL) Associated to Alternate Working Register 1 bits->Not Assigned
@@ -174,12 +174,36 @@ void SLAVE1_Initialize()
 
 void SLAVE1_Start()
 {
+    
+    #if __XC16_VERSION__ < 1700
+    
+    /*
+    Backward compatibility support for
+    XC16 version: < v1.70
+    dsPIC33CH-MP_DFP version: < 1.6.186
+    */
+    
     _start_slave();
+    #else
+    _start_secondary();
+    #endif
 }
 
 void SLAVE1_Program()               
 {
+    
+    #if __XC16_VERSION__ < 1700
+    
+    /*
+    Backward compatibility support for
+    XC16 version: < v1.70
+    dsPIC33CH-MP_DFP version: < 1.6.186
+    */
+    
     _program_slave(SLAVE_NUMBER,0,SLAVE_IMAGE);
+    #else
+    _program_secondary(SLAVE_NUMBER,0,SLAVE_IMAGE);
+    #endif
 }
  
 void SLAVE1_InterruptRequestGenerate()

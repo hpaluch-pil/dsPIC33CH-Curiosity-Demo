@@ -13,11 +13,11 @@
   @Description:
     This file will be removed in future MCC releases. Use system.h instead.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.2
         Device            :  dsPIC33CH512MP508
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.70
-        MPLAB             :  MPLAB X v5.50
+        Compiler          :  XC16 v2.10
+        MPLAB             :  MPLAB X v6.05
 */
 
 /*
@@ -53,12 +53,12 @@
 #include "system_types.h"
 #include "reset.h"
 
-#include "slave_typedef.h"
-#include "slave1.h"
-#include "watchdog.h"
-#include "reset.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "watchdog.h"
+#include "reset.h"
+#include "slave_typedef.h"
+#include "slave1.h"
 
 #warning "This file will be removed in future MCC releases. Use system.h instead."
 
